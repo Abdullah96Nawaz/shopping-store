@@ -46,7 +46,10 @@ export function addToCart(id,email){
         'Content-Type': 'application/json'
       },
       body:JSON.stringify({pid:id,name:'Abdullah',by:email})
-    }).then((response) =>dispatch(loadInfo(ADD_CART,response))
+    }).then((response) =>{
+      dispatch(loadInfo(ADD_CART,response))
+      dispatch(fetchCartData(email));
+    }
   ).catch((error)=>{
       console.log('Error ',error);
   })

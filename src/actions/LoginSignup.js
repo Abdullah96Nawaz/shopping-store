@@ -1,6 +1,8 @@
 export const LOGIN_SIGNUP = 'LOGIN_SIGNUP';
 
 const local='http://localhost:3000';
+
+
 export function login(email,password){
     console.log('im addin to cart', email)
     return(dispatch)=>{
@@ -19,6 +21,8 @@ export function login(email,password){
     })
     }
 }
+
+
 export function signup(email,password,name){
   console.log('im addin to db', email)
   return(dispatch)=>{
@@ -32,6 +36,8 @@ export function signup(email,password,name){
     })
   }
 }
+
+
 export function LoggedIn(response){
   return(dispatch)=>{
     dispatch(loadInfo(LOGIN_SIGNUP,response))

@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {
     List, message, Avatar, Spin, Button,
   } from 'antd';
+  import {deleteCartData} from '../../actions/removeCart';
 
 class ItemsList extends React.Component{
 
@@ -10,8 +11,10 @@ class ItemsList extends React.Component{
         super(props);
         this.state={}
     }
-    removeItem(e){
-        console.log(e.target.key);
+    removeItem=(id)=>{
+        console.log('AAAAAAAAAAAA',id);
+        this.props.dispatch(deleteCartData(id,this.props.email));
+        // this.props.cart.splice(id,1)
     }
     render(){
         const cart=this.props.cart;
@@ -26,7 +29,7 @@ class ItemsList extends React.Component{
                         description="Ant Design, a design language for background applications"
                         />
                         <div>
-                            <Button key={item.id} onClick={this.removeItem}>
+                            <Button key={item.id} onClick={()=>this.removeItem(item.id)}>
                                 Remove
                             </Button>
                         </div>
@@ -39,7 +42,8 @@ class ItemsList extends React.Component{
 }
 const mapStateToProps = state=>{
     return {
-        cart:state.cart
+        cart:state.cart,
+        email:state.user.email
     };
 }
 export default connect(mapStateToProps)(ItemsList);

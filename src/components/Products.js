@@ -10,7 +10,6 @@ class Productss extends Component{
     addCart=(id)=>{
         console.log('in called' ,id)
         this.props.dispatch(addToCart(id,this.props.user.email));
-        this.props.dispatch(fetchCartData(this.props.user.email));
     }
     render(){
         const data= this.props.data;

@@ -47,7 +47,7 @@ class Details extends React.Component{
                             message: 'Please input your name',
                             }],
                         })(
-                            <Input placeholder="Please input your name" name='name' value={this.state.name} />
+                            <Input placeholder="Please input your name" name='name' />
                         )}
                     </Form.Item>
 
@@ -58,7 +58,7 @@ class Details extends React.Component{
                             message: 'Please input your email',
                             }],
                         })(
-                            <Input type='email' placeholder="Please input your email" name='email' value={this.state.email} />
+                            <Input type='email' placeholder="Please input your email" name='email' />
                         )}
                     </Form.Item>
 
@@ -69,7 +69,7 @@ class Details extends React.Component{
                             message: 'Please input your address',
                             }],
                         })(
-                            <Input placeholder="Please input your address" name='address' value={this.state.address} />
+                            <Input placeholder="Please input your address" name='address'  />
                         )}
                     </Form.Item>
                 </Form>

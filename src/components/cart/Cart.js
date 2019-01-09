@@ -2,6 +2,7 @@ import React from 'react';
 import { Popover, Button,Badge,Divider } from 'antd';
 import {connect} from 'react-redux';
 import {fetchCartData} from '../../actions/actionsData';
+import {fetchOrderData} from '../../actions/orders';
 import CartContent from './CartContent';
 import {Link} from 'react-router-dom';
 
@@ -19,8 +20,13 @@ class Cart extends React.Component{
             <CartContent cart={cart}/>
             <Divider />
             <Link to='/checkout' onClick={()=>this.setState({visible: false})}>Check out</Link>
+            <Button onClick={()=>this.showOrder()}>Show Orders</Button>
         </div>
       )
+
+    showOrder=()=>{
+        this.props.dispatch(fetchOrderData(this.props.user.email));
+    }
     componentDidMount(){
         if(this.props.user)
             console.log('hereisemail',this.props.user.email)

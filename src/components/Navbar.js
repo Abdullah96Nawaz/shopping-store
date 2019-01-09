@@ -39,7 +39,7 @@ class Nav extends React.Component {
         <Menu.Item key="1">Women</Menu.Item>
         <Menu.Item key="2">Men</Menu.Item>
         <Menu.Item key="3">Children</Menu.Item>
-        <Menu.Item><Link to='/check'>Check</Link></Menu.Item>
+        {/* <Menu.Item><Link to='/check'>Check</Link></Menu.Item> */}
         {this.props.user==''||this.props.user=='user not found'?'':<Menu.Item key='4'><Cart/></Menu.Item>}
         {this.props.user==''||this.props.user=='user not found'?<Login/>:''}
         {this.props.user!=''&&this.props.user!='user not found'?<Logout/>:''}
